@@ -6,7 +6,9 @@
  * main - Entry point
  *
  * count the last digit of a random number
- *  
+ *
+ *Return: Always 0 (Success)
+ *
  */
 int main(void)
 {
