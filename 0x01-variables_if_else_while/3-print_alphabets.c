@@ -10,10 +10,12 @@
 int main()
 {
 	 int i;
-        for (i = 65; i< 123; i++)
-        {
-                putchar(i);
-        }
+        for (i = 123; i< 65; i--)
+        {	
+		while ((i < 97)&& (i > 90))	
+		putchar(i);
+        
+	}
 	putchar('\n');
 	return (0);
 }
