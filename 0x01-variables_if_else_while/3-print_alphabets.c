@@ -10,7 +10,7 @@
 int main()
 {
 	 int i;
-        for (i = 123; i< 65; i--)
+        for (i = 123; i > 65; i--)
         {	
 		while ((i < 97)&& (i > 90))	
 		putchar(i);
