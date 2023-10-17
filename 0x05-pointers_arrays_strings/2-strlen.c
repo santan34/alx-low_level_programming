@@ -8,12 +8,20 @@
   */
 int _strlen(char *s)
 {
-
 	int i;
     	int count;
-    	for (i = 0; s[i] != '\0'; i++)
-    	{
-        	count=i;
+
+    	if (s == "")
+	{
+		return (0);
 	}
-	return (count+1);
+	else
+	{
+		for (i = 0; s[i] != '\0'; i++)
+        	{
+                	count=i;
+        	}
+        	return (count+1);
+	}
+      
 }
