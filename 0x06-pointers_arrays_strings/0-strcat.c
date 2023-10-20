@@ -10,6 +10,7 @@ char *_strcat(char *dest, char *src)
 {
 	char *temp;
 	temp = dest;
+
 	while (*temp != '\0')
 	{
 		temp++;
@@ -17,10 +18,10 @@ char *_strcat(char *dest, char *src)
 	while (*src != '\0')
 	{
 		*temp = *src;
-    	   	src++;
+		src++;
 		temp++;
 
-        }
+	}
 	*temp = '\0';
-	return dest;
+	return (dest);
 }
