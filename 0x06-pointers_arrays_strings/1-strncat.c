@@ -1,28 +1,19 @@
 /**
- *_strncat concatinates two strings up to n
+ * _strncat - concatenates string with n bytes from another string
+ * @dest: destination string
+ * @src: source string
+ * @n: bytes to be copied
  *
- * @dest:the value src will be concatiiinated to
- * @src: the value to be concatinated to dest
- * @n :the value we concatinate to
- *
- * Return :the varibale dest is returned0-strcat.c
+ * Return: destination string concatenated
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	char *temp;
-	int i;
-	
-	temp = dest;
-	while (*temp != '\0')
-	{
-		temp++;
-	}
-	for (i = 0; i < n; i++)
-	{
-		*temp = *src;
-		src++;
-		temp++;
-	}
-	*temp = '\0';
+	int i = 0, j;
+
+	while (dest[i] != '\0')
+		i++;
+	for (j = 0; j < n && src[j] != '\0'; j++, i++)
+		dest[i] = src[j];
+	dest[i] = '\0';
 	return (dest);
 }
