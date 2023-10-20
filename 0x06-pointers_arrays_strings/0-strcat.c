@@ -4,13 +4,13 @@
  * @dest:the value src will be concatiiinated to
  * @src: the value to be concatinated to dest
  *
- * Return : @dest
+ * Return :the varibale dest is returned
  */
 char *_strcat(char *dest, char *src)
 {
 	char *temp;
-	temp = dest;
 
+	temp = dest;
 	while (*temp != '\0')
 	{
 		temp++;
