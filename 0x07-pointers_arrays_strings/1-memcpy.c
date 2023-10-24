@@ -1,5 +1,4 @@
 /**
- *
  * _memcpy - copies from src to dest
  * @dest: destination to copy to
  * @src: source to copy from
