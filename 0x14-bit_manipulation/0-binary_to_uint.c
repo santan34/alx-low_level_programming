@@ -7,28 +7,19 @@
  * Return: the int in int
  */
 unsigned int binary_to_uint(const char *b)
-{
-	int i;
-	int sum = 0;
+{	unsigned int x = 0;
 
-	for (i = 0; b[i] != '\0'; i++)
+	if (b == NULL)
+		return (0);
+	while (*b)
 	{
-		if (b == NULL)
-		{
-			return (0);
-		}
-		else if (b[i] == '1')
-		{
-			sum = sum + (1 << i);
-		}
-		else if (b[i] == '0')
-		{
-			sum = sum;
-		}
+		if (*b == '1')
+			x = (x << 1) | 1;
+		else if (*b == '0')
+			x <<= 1;
 		else
-		{
 			return (0);
-		}
+		b++;
 	}
-	return (sum);
+	return (x);
 }
