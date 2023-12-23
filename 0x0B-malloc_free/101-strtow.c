@@ -30,7 +30,7 @@ char **strtow(char *str)
 			lenth += 1;
 			i += 1;
 		}
-		p[index] = malloc(sizeof(char) * lenth);
+		p[index] = malloc(sizeof(char) * (1 + lenth));
 		index += 1;
 	}	
 	return(p);
