@@ -5,7 +5,7 @@
 /**
  * strtow -  my own strtok
  * @str: the string to be split
- * REturn: a char ** of the tokens
+ * Return: a char ** of the tokens
  */
 char **strtow(char *str)
 {
@@ -65,7 +65,11 @@ char **strtow(char *str)
 	return(p);
 
 }
-
+/**
+ * counter - counts the word in str
+ * @str:  the string to looka ta
+ * Return: the number of words
+ */
 
 int counter(char *str)
 {
