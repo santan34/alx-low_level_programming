@@ -9,6 +9,9 @@
  */
 char **strtow(char *str)
 {
+	int j = 0;
+	int x = 0;
+	int flag = 0;	
 	int i = 0;
 	int count = 0;
 	int index = 0;
@@ -25,14 +28,32 @@ char **strtow(char *str)
 		{
 			i += 1;
 		}
-		while (str[i] != ' ' && str[i] != '\0')
+		j = 0;
+		while (str[j] != ' ' && str[j] != '\0')
 		{
 			lenth += 1;
-			i += 1;
+			j += 1;
 		}
 		p[index] = malloc(sizeof(char) * (1 + lenth));
-		index += 1;
-	}	
+		x = 0;
+		while (str[i] != ' ' && str[i] != '\0')
+                {
+			flag = 1;
+			p[index][x] = str[i];
+			i += 1;
+			x += 1;
+		}
+		if (flag == 1)
+		{
+			p[index][x] = '\0';
+			index += 1;
+		}
+		flag = 0;
+	}
+	if (index == count)
+	{
+		p[index] = NULL;
+	}
 	return(p);
 
 }
