@@ -19,7 +19,15 @@ char **strtow(char *str)
 	int len = strlen(str);
 	int lenth = 0;
 
+	if (str == NULL || str = "")
+	{
+		return (NULL);
+	}
 	count = counter(str);
+	if (count == 0)
+	{
+		return (NULL);
+	}
 	p = malloc(sizeof(char *) * (count + 1));
 	for (i = 0; i <= len; i++)
 	{
