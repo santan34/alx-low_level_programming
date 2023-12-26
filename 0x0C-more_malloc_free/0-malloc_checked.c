@@ -2,7 +2,7 @@
 /**
  * malloc_checked - function to allocate memory plus null check
  * @b: the number of bytes to allocate
- * Return : void pinter
+ * Return: void pinter
  */
 void *malloc_checked(unsigned int b)
 {
