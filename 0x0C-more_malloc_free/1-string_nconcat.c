@@ -3,7 +3,8 @@
  * string_nconcat - concatinates two strings up to some int
  * @s1: string1 to copy
  * @s2: string 2 to cat to s1 up to n
- * @n: the strings to copy up tp
+ * @n: the strings to copy up t0
+ * Return: a cocat of the two strings
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
@@ -28,7 +29,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		n = n2;
 	}
 	str = malloc(sizeof(char) * (n1 + n + 1));
-	while(s1[i] != '\0')
+	if (str ==  NULL)
+	{
+		return (NULL);
+	}
+	while (s1[i] != '\0')
 	{
 		str[i] = s1[i];
 		i += 1;
