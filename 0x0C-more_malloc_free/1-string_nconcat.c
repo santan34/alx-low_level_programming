@@ -8,6 +8,8 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *str;
+	unsigned int i = 0;
+	unsigned int j = 0;
 	unsigned int n1;
 	unsigned int n2;
 
@@ -26,7 +28,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		n = n2;
 	}
 	str = malloc(sizeof(char) * (n1 + n + 1));
-	strncpy(str, s1, n1);
-	strncat(str, s2, n);
+	while(s1[i] != '\0')
+	{
+		str[i] = s1[i];
+		i += 1;
+	}
+	for (j = 0; j < n; j++)
+	{
+		str[i + j] = s2[j];
+	}
+	str[i + j] = '\0';
 	return (str);
 }
