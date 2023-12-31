@@ -9,7 +9,8 @@
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char * temp = NULL;
-	int i = 0;
+	unsigned int i = 0;
+	unsigned int len = 0;
 	char *str = (char *)ptr;
 
 	if (new_size == 0 && ptr != NULL)
@@ -29,12 +30,12 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (new_size > old_size)
 	{
 		temp = malloc(old_size);
-		while (str[i] != '\0')
+		len = strlen(str);
+		while (i <= len)
 		{
 			temp[i] = str[i];
 			i += 1;
 		}
-		temp[i] = '\0';
 		free(ptr);
 		ptr = malloc(new_size);
 		strcpy((char *)ptr, temp);
