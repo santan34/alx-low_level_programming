@@ -2,13 +2,13 @@
 /**
  * _realloc - reallocates memory previous assigned memory
  * @ptr: the memory to reallocate
- * @old_siz: the old size of the memory
+ * @old_size: the old size of the memory
  * @new_size: the new size of the memory
  * Return: the reallocated pointer
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	char * temp = NULL;
+	char *temp = NULL;
 	unsigned int i = 0;
 	unsigned int len = 0;
 	char *str = (char *)ptr;
@@ -26,7 +26,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (new_size == old_size)
 	{
 		return (ptr);
-	}	
+	}
 	if (new_size > old_size)
 	{
 		temp = malloc(old_size);
