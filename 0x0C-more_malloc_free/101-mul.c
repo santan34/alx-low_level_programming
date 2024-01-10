@@ -1,92 +1,138 @@
-#include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
+#include <stdlib.h>
 /**
- * main - multiple two numbers
- * @argc: the number of arguments
- * @argv: the arguments themselves
- * Return: 1 on error 0 on succes
+ * main - multiples two numbers
+ * @argc: - the number of arguents taken in
+ * @argv: - the array of the arguments
+ * Return: 0 on success
  */
+int check_one(int argc, char **argv);
+int convert(char *argv);
+int len_num(unsigned long num);
+
 int main(int argc, char **argv)
 {
-	long int ans = 0;
+	unsigned long i = 0;
+	unsigned long j = 0;
+	unsigned long product = 0;
+	unsigned long copy = 0;
+	unsigned long len = 0;
+	char *str_1;
+	char *str_2;
+	unsigned long f = 0;
+
+	check_one(argc, argv);
+	i = convert(argv[1]);
+	j = convert(argv[2]);
+	product = i * j;
+	product = product * 1;
+	copy = product;
+	len = len_num(product);
+	str_1 = malloc(sizeof(char) * (len + 1));
+	str_2 = malloc(sizeof(char) * (len + 1));
+	while (f < len)
+	{
+		str_1[f] = '0' + (copy % 10);
+		copy /= 10;
+		f += 1;
+	}
+	str_1[f] = '\0';
+	f = 0;
+	while (str_1[f] != 0)
+	{
+		str_2[f] = str_1[len - 1 - f];
+		f += 1;
+	}
+	str_2[f] = '\0';
+	f = 0;
+	while (str_2[f] != '\0')
+	{
+		_putchar(str_2[f]);
+		f += 1;
+	}
+	_putchar('\n');
+	free(str_1);
+	free(str_2);
+	return (0);
+}
+/**
+ * len_num - finds the strlen of an int
+ * @num: the num to find the length
+ * Return: the strlen
+ */
+int len_num(unsigned long num)
+{
+	int count = 0;
+
+	while (num > 0)
+	{
+		count += 1;
+		num /= 10;
+	}
+	return (count);
+}
+/**
+ * convert - conver a str to int
+ * @argv: the char * to convert
+ * Return: the int of the string
+ */
+int convert(char *argv)
+{
+	int x = 0;
+	int y = 0;
+	int num_1 = 0;
+
+	while (argv[y] != '\0')
+	{
+		x = 0;
+		while (x < 10)
+		{
+			if (argv[y] == '0' + x)
+			{
+				break;
+			}
+			x += 1;
+		}
+		num_1 = num_1 * 10;
+		num_1 += x;
+		y += 1;
+	}
+	return (num_1);
+}
+/**
+ * check_one - check if the char *'s contain integers only
+ * @argc: contains the number of arguments
+ * @argv: the arguments themselves
+ * Return: 0 on success
+ */
+int check_one(int argc, char **argv)
+{
 	int i = 0;
-	char *str = NULL;
-	int len = 0;
-	int a1 = get_num(argv[1]);
-	int a2 = get_num(argv[2]);
 
 	if (argc != 3)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	ans = a1 * a2;
-	len = find_len(ans);
-	str = malloc(sizeof(char) * (len + 1));
-	i = len;
-	while (i > 0)
+	while (argv[1][i] != '\0')
 	{
-		if (i == len)
+		if ((argv[1][i] < '0') || (argv[1][i] > '9'))
 		{
-			str[i] = '\0';
+			printf("Error\n");
+			exit(98);
 		}
-		else
-		{
-			str[i] = '0' + (ans % 10);
-			ans /= 10;
-		}
-		i -= 1;
-	}
-	while (str)
-	{
-		_putchar(*str);
-		str++;
-	}
-	return (0);
-}
-int find_len(int num)
-{
-	int i = 0;
-	while (num != 0)
-	{
-		num = num / 10;
 		i += 1;
 	}
-	return (i);
-}
-int get_num(char *string)
-{
-	char *str = NULL;
-	int num;
-	int new_num;
-	int i = 0;
-
-	str = malloc((strlen(string) + 1) * sizeof(char));
-	while (string)
+	i = 0;
+	while (argv[2][i] != '\0')
 	{
-		*str = *string;
-		str++;
-		string++;
-	}
-	*str = '\0';
-	while (str[i] != '\0')
-	{
-		num = iffy(str[i]);
-		new_num  = new_num * 10;
-		new_num = new_num + num;
-	}
-	return (new_num);
-}
-int iffy(char s)
-{
-	int i = 0;
-
-	for (i = 0; i < 10; i++)
-	{
-		if (s == '0' + i)
+		if ((argv[2][i] < '0') || (argv[2][i] > '9'))
 		{
-			return (i);
+			printf("Error\n");
+			exit(98);
 		}
+		i += 1;
 	}
 	return (0);
 }
