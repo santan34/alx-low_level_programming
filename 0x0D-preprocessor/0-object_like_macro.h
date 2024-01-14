@@ -1,4 +1,3 @@
-#ifndef 0_OBJECT_LIKE_MACRO
-#include "main.h"
+#ifndef SIZE
 #define SIZE 1024
 #endif
