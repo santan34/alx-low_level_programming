@@ -1,10 +1,10 @@
 #include <stdio.h>
 /**
  * main - prints out the directory
- * Return: 1 on success
+ * Return: 0 on success
  */
 int main(void)
 {
 	printf("%s\n", __FILE__);
-	return (1);
+	return (0);
 }
