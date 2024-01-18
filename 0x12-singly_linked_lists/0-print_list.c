@@ -4,22 +4,14 @@
  *  @h: a point er to a structure
  *  Return: the number of nodes
  */
-size_t count = 0;
 
 size_t print_list(const list_t *h)
 {
-	if (h == NULL)
-	{
-		return (count);
-	}
+	if (h->str == NULL)
+		printf("[0] (nil)\n");
 	else
-	{
-		if (h->str == NULL)
-			printf("[0] (nil)\n");
-		else
-			printf("[%u] %s\n", h->len, h->str);
-		count += 1;
-		print_list(h->next);
-	}
-	return (1);
+		printf("[%u] %s\n", h->len, h->str);
+	if (h->next == NULL)
+		return (1);
+	return (1 + print_list(h->next));
 }
