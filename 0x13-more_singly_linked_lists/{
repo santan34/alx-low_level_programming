@@ -1,0 +1,11 @@
+stint_t *tmp;
+
+
+        while (head != NULL)
+        {
+                tmp = head->next;
+                free(head);
+                head = tmp;
+        }
+
+}
