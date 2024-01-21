@@ -23,6 +23,13 @@
 		*h = new;
 		return (new);
 	}
+	if (idx == 0)
+	{
+		new->next = tmp;
+		(*h)->prev = new;
+		*h = new;
+		return (new);
+	}
 	while ((count != idx) && (tmp->next != NULL))
 	{
 		count += 1;
