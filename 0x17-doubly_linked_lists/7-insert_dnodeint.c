@@ -30,10 +30,10 @@
 	}
 	if (count == idx)
 	{
-		new->next = tmp;
-		new->prev = tmp->prev;
-		tmp->prev->next = new;
-		tmp->prev = new;
+		new->next = tmp->next;
+		tmp->next->prev = new;
+		tmp->next = new;
+		new->prev = tmp;
 	}
 	else
 		return (NULL);
