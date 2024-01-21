@@ -9,7 +9,7 @@
 {
 	dlistint_t *new =NULL;
 	dlistint_t *tmp =NULL;
-	unsigned int count = 1;
+	unsigned int count = 0;
 
 	new = malloc(sizeof(dlistint_t));
 	tmp = *h;
@@ -18,7 +18,7 @@
 	new->n = n;
 	new->next = NULL;
 	new->prev = NULL;
-	if (idx == 1 && tmp == NULL)
+	if (idx == 0 && tmp == NULL)
 	{
 		*h = new;
 		return (new);
@@ -30,10 +30,10 @@
 	}
 	if (count == idx)
 	{
-		new->next = tmp->next;
-		tmp->next->prev = new;
-		tmp->next = new;
-		new->prev = tmp;
+		new->next = tmp;
+		new->prev = tmp->prev;
+		tmp->prev->next = new;
+		tmp->prev = new;
 	}
 	else
 		return (NULL);
