@@ -3,12 +3,13 @@
  * insert_dnodeint_at_index - insert node at index
  * @h: the head of the struct
  * @idx: the index to insert at
+ * @n: the number to put
  * Return: a dlistint_t
  */
- dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new =NULL;
-	dlistint_t *tmp =NULL;
+	dlistint_t *new = NULL;
+	dlistint_t *tmp = NULL;
 	unsigned int count = 0;
 
 	new = malloc(sizeof(dlistint_t));
