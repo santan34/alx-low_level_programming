@@ -5,13 +5,18 @@
  *  Return: Always 0 (Success) 
  */
 
-int main() 
+int main()
 {
-   int ch;
-for (ch = 97; ch<=122; ch++)
-   {
-!(ch==101 || ch  == 113) &&putchar(ch);
-   };
-    return (0);
+	int ch;
+	for (ch = 97; ch<=122; ch++)
+	{
+		if (ch == 113)
+			ch += 1;
+		if  (ch  == 101)
+			ch += 1;
+		putchar(ch);
+	}
+	putchar('\n');
+	return (0);
 }
 
