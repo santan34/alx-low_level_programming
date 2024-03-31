@@ -16,8 +16,10 @@ int main(void)
 		{
 			for (k = 0; k <= 9; k++)
 			{
-				for (l = 1; l <= 9; l++)
+				for (l = 0; l <= 9; l++)
 				{
+					if (j == 0 && l == 0 && k == 0 && i == 0)
+						l = 1;
 					putchar('0' + i);
 					putchar('0' + j);
 					putchar(' ');
