@@ -1,41 +1,31 @@
 #include <stdio.h>
-
 /**
- * main - a simple program that outputs unordered
- * Return: 0 on success
+ * main - entry point
+ * Return: 0
  */
 int main(void)
 {
-	int ifirst;
-	int i;
-	int jfirst;
-	int j;
+	int num1, num2;
 
-	for (ifirst = 48; ifirst < 58; ifirst++)
+	for (num1 = 0; num1 <= 98; num1++)
 	{
-		for (i = 48; i < 58; i++)
+		for (num2 = num1 + 1; num2 <= 99; num2++)
 		{
-			j = i + 1;
-			jfirst = ifirst;
-			for (; jfirst < 58; jfirst++)
-			{
-				for (; j < 58; j++)
-				{
-					putchar(ifirst);
-					putchar(i);
-					putchar(' ');
-					putchar(jfirst);
-					putchar(j);
-					if (ifirst != 57 || jfirst != 57 || i != 56 || j != 57)
-					{
-						putchar(',');
-						putchar(' ');
-					}
-				}
-				j = 48;
-			}
+			putchar((num1 / 10) + '0');
+			putchar((num1 % 10) + '0');
+			putchar(' ');
+			putchar((num2 / 10) + '0');
+			putchar((num2 % 10) + '0');
+
+			if (num1 == 98 && num2 == 99)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
 	}
+
 	putchar('\n');
+
 	return (0);
 }
