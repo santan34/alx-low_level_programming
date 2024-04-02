@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * _islower - prints out if input is in upper or lower case
+ * @c: thne number
  * Return: On success 1
  */
 int _islower(int c)
