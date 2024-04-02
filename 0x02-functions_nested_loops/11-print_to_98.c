@@ -1,12 +1,9 @@
 #include <stdio.h>
 #include "main.h"
-
 /**
- * 
- * print_to_98 - prints all natural from  to 98,
- * 
- * @n: print from this number
- *
+ * print_to_98 - prints all natural from  to 98
+ * @n: print from this numb
+ * Return: nothing
  */
 void print_to_98(int n)
 {
