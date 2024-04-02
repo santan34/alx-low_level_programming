@@ -1,36 +1,38 @@
 #include <stdio.h>
+
 /**
- * main - the entry point
- * Return: 1 on success
+ * main - a simple program that outputs unordered
+ * Return: 0 on success
  */
 int main(void)
 {
-	int i = 0;
-	int j = 0;
-	int k = 0;
-	int l = 0;
+	int ifirst;
+	int i;
+	int jfirst;
+	int j;
 
-	for (i = 0; i <= 9; i++)
+	for (ifirst = 48; ifirst < 58; ifirst++)
 	{
-		for (j = 0; j < 9; j++)
+		for (i = 48; i < 58; i++)
 		{
-			for (k = 0; k <= 9; k++)
+			j = i + 1;
+			jfirst = ifirst;
+			for (; jfirst < 58; jfirst++)
 			{
-				for (l = 0; l <= 9; l++)
+				for (; j < 58; j++)
 				{
-					if (j == 0 && l == 0 && k == 0 && i == 0)
-						l = 1;
-					putchar('0' + i);
-					putchar('0' + j);
+					putchar(ifirst);
+					putchar(i);
 					putchar(' ');
-					putchar('0' + k);
-					putchar('0' + l);
-					if ((i != 9) || (j != 8) || (k != 9) || (l != 9))
+					putchar(jfirst);
+					putchar(j);
+					if (ifirst != 57 || jfirst != 57 || i != 56 || j != 57)
 					{
 						putchar(',');
 						putchar(' ');
 					}
 				}
+				j = 48;
 			}
 		}
 	}
