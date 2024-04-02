@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc $CFILE -S 100-intel.s
+gcc -S -masm=intel $CFILE
