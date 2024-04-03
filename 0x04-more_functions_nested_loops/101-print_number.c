@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <limits.h>
 void print(int n);
 /**
  * print_number - Function that prints an integer.
@@ -11,6 +12,11 @@ void print_number(int n)
 		_putchar('0');
 	else if (n > 0)
 		print(n);
+	else if (n == INT_MIN)
+	{
+		_putchar('-');
+		print_number(INT_MAX);
+	}
 	else if (n < 0)
 	{
 		_putchar('-');
