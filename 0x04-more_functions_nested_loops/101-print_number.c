@@ -45,5 +45,9 @@ void print(int n)
 		_putchar((c / c1) + '0');
 		c = c % c1;
 		c1 /= 10;
+		if (c == 0 && c1 != 0)
+		{
+			_putchar('0');
+		}
 	}
 }
