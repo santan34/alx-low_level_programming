@@ -1,12 +1,9 @@
 #include "main.h"
 
 /**
-*
-*print_most_numbers - prints all the numbers from 0-9 leaving aout 2 and 4
-*
-*Return: void
-*
-*/
+ * print_most_numbers - prints all the numbers from 0-9 leaving aout 2 and 4
+ * Return: void
+ */
 
 void print_most_numbers(void)
 {
