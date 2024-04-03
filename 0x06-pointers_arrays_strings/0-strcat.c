@@ -1,10 +1,8 @@
 /**
  * _strcat - concatinate two strings
- *
  * @dest:the value src will be concatiiinated to
  * @src: the value to be concatinated to dest
- *
- * Return :the varibale dest is returned0-strcat.c
+ * Return: the dest
  */
 char *_strcat(char *dest, char *src)
 {
