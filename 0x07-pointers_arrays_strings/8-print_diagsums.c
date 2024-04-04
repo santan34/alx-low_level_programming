@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stdio.h>
 /**
- *
  * print_diagsums - prints diagonal summaries
  *
  * @a: array to use
