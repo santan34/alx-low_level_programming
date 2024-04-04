@@ -1,6 +1,5 @@
 #include "main.h"
 /**
- *
  * _strstr - locates substring
  *
  * @haystack: string to locte

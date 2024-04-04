@@ -1,5 +1,4 @@
 /**
- *
  * _strpbrk - finds a string
  *
  * @s: string to find stuff

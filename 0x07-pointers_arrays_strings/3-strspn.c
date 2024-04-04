@@ -1,9 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- *
- * _strspn - length of prefix substring
- *
+ *  _strspn - length of prefix substring
  * @s: string to go through
  * @accept: accepted bytes
  *
