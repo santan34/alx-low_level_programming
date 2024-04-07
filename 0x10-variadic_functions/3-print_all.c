@@ -84,7 +84,7 @@ void prints(va_list list)
 {
 	char *s = va_arg(list, char*);
 
-	if (s)
+	while (s)
 	{
 		printf("%s", s);
 		return;
