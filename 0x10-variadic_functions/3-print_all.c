@@ -1,34 +1,86 @@
 #include "variadic_functions.h"
-void print_all(const char * const format, ...);
+void printc(va_list list);
+void printff(va_list list);
+void prints(va_list list);
+void printi(va_list list);
+/**
+ * print_all - prints various types given a format string for the arguments
+ *
+ * @format: string containing type information for args
+ *
+ * Return: void
+ */
+void print_all(const char * const format, ...)
 {
 	va_list list;
-	index = 0;
-	func funcs[4] = {{'c', printc}; {'s', prints}
+	int comma = 0;
+	int index = 0;
+	const char *ptr = format;
+	func funcs[4] = {{'c', printc}, {'s', prints},
 		{'f', printff}, {'i', printi}};
 
 	va_start(list, format);
-	while(format)
+	while (format && *ptr)
 	{
-		funcs[index].
+		if (funcs[index].key == *ptr)
+		{
+			if (comma != 0)
+			{
+				printf(", ");
+			}
+			funcs[index].f(list);
+			comma += 1;
+			ptr++;
+			index = -1;
+		}
+		index++;
+		ptr += index / 4;
+		index %= 4;
 	}
+	printf("\n");
+	va_end(list);
 }
-
-void printc(va_list, list)
+/**
+ * printc - printfs a char from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
+ */
+void printc(va_list list)
 {
-	printf("%c",(char) va_arg(list, char));
+	printf("%c", (char) va_arg(list, int));
 }
-
-void printi(va_list, list)
+/**
+ * printi - printfs a int from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
+ */
+void printi(va_list list)
 {
 	printf("%d", va_arg(list, int));
 }
-
-void printff(va_list, list)
+/**
+ * printff - printfs a float from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
+ */
+void printff(va_list list)
 {
-	printf("%f",(float) va_arg(list, double));
+	printf("%f", (float) va_arg(list, double));
 }
-
-void prints(va_list, list)
+/**
+ * prints - printfs astring form var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
+ */
+void prints(va_list list)
 {
 	char *s = va_arg(list, char*);
 

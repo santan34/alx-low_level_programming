@@ -3,6 +3,11 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdio.h>
+/**
+ * struct funkeys - stores a key that links to a function
+ * @key: character specifier
+ * @f: function to use for printing
+ */
 typedef struct funkeys
 {
 	char key;
